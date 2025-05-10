@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../resources/main.robot
+Resource    ../../../resources/main.robot
 Suite Setup    Efetuar Login em uma página web usando credenciais básicas válidas
 Test Setup    O usuário está logado
 Suite Teardown    Efetuar Logout E fechar navegador
