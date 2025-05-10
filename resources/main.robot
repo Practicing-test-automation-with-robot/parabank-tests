@@ -1,13 +1,16 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-# Resources
+# ====================================================================#
+#                            Resources                                #
+# ====================================================================#
+
 # keywords
-Resource    keywords/cart_keywords.robot
+Resource    keywords/register_keywords.robot
 Resource    keywords/login_keywords.robot
 
 # variebles
-Resource    variables/cart.robot
+Resource    variables/register.robot
 Resource    variables/login.robot
 
 # auth

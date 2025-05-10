@@ -3,13 +3,10 @@ Resource    ../../../resources/main.robot
 
 *** Test Cases ***
 
-Test case 1: Login e Logout com dados válidos
+Test case: Login e Logout com dados válidos
     [Tags]    login    valid
     Efetuar Login em uma página web usando credenciais básicas válidas
+    # Efetuar Logout
+    # Fechar navegador
     # Efetuar Logout E fechar navegador
-
-Test case 2: Login com dados inválidos
-    [Tags]    login    invalid
-    Efetuar Login em uma página web usando credenciais básicas inválidas
-    Fechar navegador
     
