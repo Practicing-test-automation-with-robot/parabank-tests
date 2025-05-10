@@ -19,6 +19,14 @@ ${BROWSER}     chrome
 ${USERNAME}    usuario_teste
 ${PASSWORD}    senha_teste
 
+# Variáveis para o registro de usuário também podem ser definidas com base nas propriedades
+# do elemento HTML, como id, name ou class.
+${input_email}    id:email
+${input_password}    id:password
+${input_confirm_password}    id:confirm_password
+${input_register}    name:register
+${input_register_button}    class:register-button
+
 
 
 # ====================================================================================================================
