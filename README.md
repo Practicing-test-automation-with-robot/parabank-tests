@@ -63,11 +63,13 @@ robot struture.robot
 ## ✅ Boas Práticas
 Organização, clareza e padronização são a base de um bom projeto de automação. Aqui estão as boas práticas recomendadas para este repositório:
 
+---
 📄 Escrita de Testes
    - 🔤 Use nomes descritivos para seus testes, como Login com usuário válido ao invés de Teste1.
    - 📂 Separe os cenários por funcionalidades, organizando os testes em pastas como login/, checkout/, carrinho/, etc.
    - 🔁 Reutilize Keywords sempre que possível. Crie funções reutilizáveis em arquivos .robot dedicados à lógica de cada funcionalidade.
    - 🏷️ Adicione tags em seus testes ([Tags]) para permitir filtros em execuções específicas (ex: smoke, regression, login).
+---
 
 📐 Organização e Estrutura
    - 📁 Nomeie arquivos e pastas usando apenas letras minúsculas e com underscores (_) para separar palavras. Ex: login_test.robot, add_to_cart_test.robot.
