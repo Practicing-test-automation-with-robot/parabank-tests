@@ -75,19 +75,19 @@ Organização, clareza e padronização são a base de um bom projeto de automa�
    - 🗂️ Na pasta resources/keywords/, siga o padrão nome_da_funcionalidade_keywords.robot. Ex: login_keywords.robot, checkout_keywords.robot.
 
    - 🧩 Divida os arquivos por contexto:
-*** Keywords ***
+
+```markdown
    tests/: arquivos de cenários (cenário de negócios)
-
    resources/keywords/: palavras-chave reutilizáveis
-
    resources/variables/: variáveis globais ou de ambiente
-
    output/: relatórios e logs
+```
 
 🛠️ Estrutura dos Testes
    -📋 Sempre utilize Suite Setup, Test Setup, Teardown, e Suite Teardown quando aplicável. Isso garante testes limpos, controlados e isolados.
    - ✍️ Use comentários claros dentro das Keywords, pulando linhas quando necessário para facilitar a leitura e manutenção:
 
+```markdown
       *** Keywords ***
       Realizar Login Com Sucesso
          # Abre o navegador e acessa a página de login
@@ -99,6 +99,7 @@ Organização, clareza e padronização são a base de um bom projeto de automa�
          
          # Clica no botão de login
          Click Button    id=login
+```
 
 🧪 Evite depender de dados dinâmicos ou externos não controlados (como tempo de espera fixo, dados de terceiros etc.). Prefira Wait Until Element Is Visible ao invés de Sleep.
 
