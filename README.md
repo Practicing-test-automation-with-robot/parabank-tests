@@ -64,37 +64,30 @@ robot struture.robot
 Organização, clareza e padronização são a base de um bom projeto de automação. Aqui estão as boas práticas recomendadas para este repositório:
 
 📄 Escrita de Testes
-🔤 Use nomes descritivos para seus testes, como Login com usuário válido ao invés de Teste1.
-
-📂 Separe os cenários por funcionalidades, organizando os testes em pastas como login/, checkout/, carrinho/, etc.
-
-🔁 Reutilize Keywords sempre que possível. Crie funções reutilizáveis em arquivos .robot dedicados à lógica de cada funcionalidade.
-
-🏷️ Adicione tags em seus testes ([Tags]) para permitir filtros em execuções específicas (ex: smoke, regression, login).
+   - 🔤 Use nomes descritivos para seus testes, como Login com usuário válido ao invés de Teste1.
+   - 📂 Separe os cenários por funcionalidades, organizando os testes em pastas como login/, checkout/, carrinho/, etc.
+   - 🔁 Reutilize Keywords sempre que possível. Crie funções reutilizáveis em arquivos .robot dedicados à lógica de cada funcionalidade.
+   - 🏷️ Adicione tags em seus testes ([Tags]) para permitir filtros em execuções específicas (ex: smoke, regression, login).
 
 📐 Organização e Estrutura
-📁 Nomeie arquivos e pastas usando apenas letras minúsculas e com underscores (_) para separar palavras. Ex: login_test.robot, add_to_cart_test.robot.
+   - 📁 Nomeie arquivos e pastas usando apenas letras minúsculas e com underscores (_) para separar palavras. Ex: login_test.robot, add_to_cart_test.robot.
 
-🗂️ Na pasta resources/keywords/, siga o padrão nome_da_funcionalidade_keywords.robot. Ex: login_keywords.robot, checkout_keywords.robot.
+   - 🗂️ Na pasta resources/keywords/, siga o padrão nome_da_funcionalidade_keywords.robot. Ex: login_keywords.robot, checkout_keywords.robot.
 
-🧩 Divida os arquivos por contexto:
+   - 🧩 Divida os arquivos por contexto:
+*** Keywords ***
+   tests/: arquivos de cenários (cenário de negócios)
 
-tests/: arquivos de cenários (cenário de negócios)
+   resources/keywords/: palavras-chave reutilizáveis
 
-resources/keywords/: palavras-chave reutilizáveis
+   resources/variables/: variáveis globais ou de ambiente
 
-resources/variables/: variáveis globais ou de ambiente
-
-output/: relatórios e logs
+   output/: relatórios e logs
 
 🛠️ Estrutura dos Testes
-📋 Sempre utilize Suite Setup, Test Setup, Teardown, e Suite Teardown quando aplicável. Isso garante testes limpos, controlados e isolados.
+   -📋 Sempre utilize Suite Setup, Test Setup, Teardown, e Suite Teardown quando aplicável. Isso garante testes limpos, controlados e isolados.
+   - ✍️ Use comentários claros dentro das Keywords, pulando linhas quando necessário para facilitar a leitura e manutenção:
 
-✍️ Use comentários claros dentro das Keywords, pulando linhas quando necessário para facilitar a leitura e manutenção:
-
-robot
-Copy
-Edit
 *** Keywords ***
 Realizar Login Com Sucesso
     # Abre o navegador e acessa a página de login
@@ -106,11 +99,11 @@ Realizar Login Com Sucesso
     
     # Clica no botão de login
     Click Button    id=login
+
 🧪 Evite depender de dados dinâmicos ou externos não controlados (como tempo de espera fixo, dados de terceiros etc.). Prefira Wait Until Element Is Visible ao invés de Sleep.
 
 🔄 Controle de Versão e CI/CD
 🚫 Não suba arquivos .log, .html, .xml, nem pastas output/. Garanta isso com um .gitignore bem configurado.
-
 🧪 Para integração contínua, mantenha scripts como run_tests.sh e pipelines versionados no projeto.
 
 ---
