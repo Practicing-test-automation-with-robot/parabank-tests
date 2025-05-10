@@ -3,16 +3,31 @@
 
 Bem-vindo(a) ao repositório de desafios diários de automação com **Robot Framework**! Este projeto foi criado para praticar, aprender e dominar a criação de testes automatizados com foco em qualidade e boas práticas. 💪
 
+### Site
+
+Abaixo segue o link do site utilizado para elaboração dos testes, sistema bancário demo com login, transferências, extrato, etc.
+
+- [Parabank demo](https://parabank.parasoft.com/parabank/index.htm)
+
 ---
 
 ## 📁 Estrutura de Pastas
 
 ```
 small-daily-challenges/
+├── resouces/     
+   ├── auth/                  # Contém dados de login no arquivo env.resource
+   ├── keywords/              # Contém as Keywords
+   ├── variebles/             # Contém as variáveis utilizadas nas keywords
+   ├── main.robot             # Contém todas as bibliotecas e caminhos de pastas e arquivos utilizados    
+├── tests/
+   ├── api/                   # Contém as suites de testes para api
+   ├── mobile/                # Contém as suites de testes para mobile
+   ├── web/                   # Contém as suites de testes para web      
 ├── .git/                     # Dados de versionamento
 ├── README.md                 # Este arquivo incrível que você está lendo
 ├── .gitignore                # Ignora arquivos temporários, swp, etc.
-├── struture.robot            # Script com estrutura de exemplo dos testes
+├── struture.robot            # Script com estrutura de exemplo dos testes para iniciantes
 ```
 
 ---

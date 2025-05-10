@@ -7,6 +7,7 @@ Suite Teardown    Efetuar Logout E fechar navegador
 *** Test Cases ***
 
 Test case 1: Adicionar 1 Produto ao carrinho de compras e efetuar checkout
+    [Tags]    carrinho    checkout    produto
     Dado que o produto "Sauce Labs Backpack" foi localizado
     Quando o usuário clicar no botão "Add to cart"
     E o produto for apresentado no carrinho de compras
