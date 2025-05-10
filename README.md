@@ -86,6 +86,7 @@ Organização, clareza e padronização são a base de um bom projeto de automa�
 ```
 
 🛠️ Estrutura dos Testes
+
    -📋 Sempre utilize Suite Setup, Test Setup, Teardown, e Suite Teardown quando aplicável. Isso garante testes limpos, controlados e isolados.
    - ✍️ Use comentários claros dentro das Keywords, pulando linhas quando necessário para facilitar a leitura e manutenção:
 
