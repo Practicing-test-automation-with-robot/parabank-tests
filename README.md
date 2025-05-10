@@ -88,17 +88,17 @@ Organização, clareza e padronização são a base de um bom projeto de automa�
    -📋 Sempre utilize Suite Setup, Test Setup, Teardown, e Suite Teardown quando aplicável. Isso garante testes limpos, controlados e isolados.
    - ✍️ Use comentários claros dentro das Keywords, pulando linhas quando necessário para facilitar a leitura e manutenção:
 
-*** Keywords ***
-Realizar Login Com Sucesso
-    # Abre o navegador e acessa a página de login
-    Open Browser    ${URL}    chrome
-    
-    # Preenche os dados do usuário
-    Input Text    id=username    ${USERNAME}
-    Input Text    id=password    ${PASSWORD}
-    
-    # Clica no botão de login
-    Click Button    id=login
+      *** Keywords ***
+      Realizar Login Com Sucesso
+         # Abre o navegador e acessa a página de login
+         Open Browser    ${URL}    chrome
+         
+         # Preenche os dados do usuário
+         Input Text    id=username    ${USERNAME}
+         Input Text    id=password    ${PASSWORD}
+         
+         # Clica no botão de login
+         Click Button    id=login
 
 🧪 Evite depender de dados dinâmicos ou externos não controlados (como tempo de espera fixo, dados de terceiros etc.). Prefira Wait Until Element Is Visible ao invés de Sleep.
 
