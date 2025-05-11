@@ -9,20 +9,24 @@ Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.paraso
 
 ##### 📁 Estrutura de Pastas
 ```bash
-small-daily-challenges/
-├── .venv/                   # Ambiente virtual Python para isolar dependências
-├── config/                 # Arquivos de configuração do projeto
-├── libraries/              # Bibliotecas customizadas para os testes
+small-daily-challenges/parabank-tests/
+├── .venv/                 # Ambiente virtual Python para isolar dependências
+├── config/                # Arquivos de configuração do projeto
+├── libraries/             # Bibliotecas customizadas para os testes
 ├── resources/
-│   ├── auth/               # Dados de login e credenciais
-│   ├── keywords/           # Keywords reutilizáveis organizadas por funcionalidade
-│   ├── variables/          # Variáveis globais e de ambiente
-│   └── main.robot          # Arquivo principal com importações e setups
-├── results/                # Relatórios e logs de execução
+│   ├── auth/              # Dados de login e credenciais
+│   ├── data/              # Dados Fake - Fakelibrary 
+│   ├── keywords/          # Keywords reutilizáveis organizadas por funcionalidade
+│   ├── locators/          # Variáveis globais e de ambiente
+│   └── main.robot         # Arquivo principal com importações e setups
+├── results/               # Relatórios e logs de execução
+│   tests_data/            
 ├── tests/
 │   ├── api/                # Testes automatizados para APIs
 │   ├── mobile/             # Testes para aplicações mobile
 │   ├── web/                # Testes para aplicações web
+│     ├── login/
+│     ├── register/
 │   └── structure_example.md # Exemplo de estrutura para iniciantes
 ├── .gitignore              # Exclusão de arquivos do versionamento
 ├── conftest.py             # Configurações do Pytest

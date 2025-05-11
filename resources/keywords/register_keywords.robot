@@ -46,16 +46,8 @@ Quando o usuário clicar no botão "Registrar" sem preencher os campos obrigató
 Então serão apresentadas mensagens de erros para os campos obrigatórios
     [Documentation]    Verifica se as mensagens de erro são exibidas nos campos obrigatórios do forms
     ...    que está organizado em uma tabela
-    @{linhas}=    Get WebElements    xpath=//table[@class='form2']//tr[td[2]/input]
-    FOR    ${linha}    IN    @{linhas}
-        ${tds}=    Get WebElements    xpath=.//td
-        ${rotulo}=    Get Text    ${tds[0]}
-        ${erro}=    Get Text    xpath=.//span[contains(@class, 'error')]
-        Should Be True    "${erro}" in ${register_form_errors}
-        Log    Erro encontrado na linha do campo: ${rotulo}
-    END
+    Validar mensagens de erro para preenchimento de campos obrigatórios do formulário de Registro
     Capture Page Screenshot
-
 
 Quando preencher o formulário de registro com dados já cadastrados (usuário default)
     [Documentation]    Preencher o formulário de registro com dados já cadastrados (usuário default)
@@ -63,9 +55,7 @@ Quando preencher o formulário de registro com dados já cadastrados (usuário d
 
 Então sistema apresenta mensagem de erro de registro: "This username already exists."
     [Documentation]    Verifica se a mensagem de erro é exibida
-    Wait Until Element Is Visible    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]    timeout=10s
-    ${error_message}=    Get Text    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]
-    Should Contain    ${error_message}    This username already exists.                     
+    Validar mensagem de erro para o campo de identificador único de Registro de usuário (user_name)
     Capture Page Screenshot
 
 
@@ -102,3 +92,26 @@ Preencher o formulário de registro com dados já cadastrados (user_name do usu�
     ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}=    Dados fake de Registro de usuário
     Preencher o formulário de registro    ${first_name_default}    ${last_name_default}    ${address_user}    ${city_user}    ${state_user}    
     ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${user_name_default}    ${password_default}    ${password_default}
+
+
+# ============================================================================================================== #
+#                            Validação de erros e excessões para formulário de Registro                          #
+# ============================================================================================================== #
+
+Validar mensagens de erro para preenchimento de campos obrigatórios do formulário de Registro
+    [Documentation]    Verifica se as mensagens de erro são exibidas nos campos obrigatórios do forms
+    ...    que está organizado em uma tabela
+    @{linhas}=    Get WebElements    xpath=//table[@class='form2']//tr[td[2]/input]
+    FOR    ${linha}    IN    @{linhas}
+        ${tds}=    Get WebElements    xpath=.//td
+        ${rotulo}=    Get Text    ${tds[0]}
+        ${erro}=    Get Text    xpath=.//span[contains(@class, 'error')]
+        Should Be True    "${erro}" in ${register_form_errors}
+        Log    Erro encontrado na linha do campo: ${rotulo}
+    END
+
+Validar mensagem de erro para o campo de identificador único de Registro de usuário (user_name)
+    [Documentation]    Verifica mensagem de erro de registro: "This username already exists."
+    Wait Until Element Is Visible    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]    timeout=10s
+    ${error_message}=    Get Text    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]
+    Should Contain    ${error_message}    This username already exists.                     
