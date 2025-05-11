@@ -25,8 +25,16 @@ Library    ../libraries/utils/generate_uuid.py
 Resource    auth/env.resource
 
 # keywords
-Resource    keywords/register_keywords.robot
-Resource    keywords/login_keywords.robot
+# ====================================================================#
+# validations
+Resource    keywords/validations/register_validations.robot
+Resource    keywords/validations/login_validations.robot
+# flows
+Resource    keywords/flows/register_flows.robot
+Resource    keywords/flows/login_flows.robot
+# 
+Resource    keywords/pages/login_page.robot
+Resource    keywords/pages/register_page.robot
 
 # locators
 Resource    locators/register.robot

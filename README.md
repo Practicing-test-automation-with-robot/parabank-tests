@@ -10,26 +10,29 @@ Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.paraso
 ##### 📁 Estrutura de Pastas
 ```bash
 small-daily-challenges/
-├── .venv/                   # Ambiente virtual Python para isolar dependências
-├── config/                 # Arquivos de configuração do projeto
-├── libraries/              # Bibliotecas customizadas para os testes
+├── .venv/                       # Ambiente virtual Python para isolar dependências
+├── config/                      # Arquivos de configuração do projeto
+├── libraries/                   # Bibliotecas customizadas para os testes
 ├── resources/
-│   ├── auth/               # Dados de login e credenciais
-│   ├── keywords/           # Keywords reutilizáveis organizadas por funcionalidade
-│   ├── variables/          # Variáveis globais e de ambiente
-│   └── main.robot          # Arquivo principal com importações e setups
-├── results/                # Relatórios e logs de execução
+│   ├── auth/                    # Dados de login e credenciais
+│   ├── keywords/                # Keywords reutilizáveis organizadas por funcionalidade
+│      ├── pages/                # Elementos e interações específicas de páginas (ex: login_page.robot)
+│      ├── flows/                # Fluxos completos que combinam múltiplas páginas (ex: realizar_login.robot)
+│      └── validations/          # Keywords específicas de validação (ex: validar_mensagem_erro.robot)
+│   ├── locators/                # Variáveis globais e de ambiente
+│   └── main.robot               # Arquivo principal com importações e setups
+├── results/                     # Relatórios e logs de execução
 ├── tests/
-│   ├── api/                # Testes automatizados para APIs
-│   ├── mobile/             # Testes para aplicações mobile
-│   ├── web/                # Testes para aplicações web
-│   └── structure_example.md # Exemplo de estrutura para iniciantes
-├── .gitignore              # Exclusão de arquivos do versionamento
-├── conftest.py             # Configurações do Pytest
-├── Dockerfile              # Imagem Docker do projeto
-├── Jenkinsfile             # Pipeline de CI/CD para Jenkins
-├── pytest.ini              # Configurações do Pytest
-└── README.md               # Documentação principal
+│   ├── api/                     # Testes automatizados para APIs
+│   ├── mobile/                  # Testes para aplicações mobile
+│   ├── web/                     # Testes para aplicações web
+│   └── structure_example.md     # Exemplo de estrutura para iniciantes
+├── .gitignore                   # Exclusão de arquivos do versionamento
+├── conftest.py                  # Configurações do Pytest
+├── Dockerfile                   # Imagem Docker do projeto
+├── Jenkinsfile                  # Pipeline de CI/CD para Jenkins
+├── pytest.ini                   # Configurações do Pytest
+└── README.md                    # Documentação principal
 ```
 ---
 ##### 📚 Bibliotecas Utilizadas (resources/main.robot)
