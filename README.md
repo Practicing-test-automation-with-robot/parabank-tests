@@ -3,7 +3,7 @@
 Bem-vindo(a) ao repositório de desafios diários de automação com Robot Framework!
 Este projeto foi criado para praticar, aprender e dominar a criação de testes automatizados com foco em qualidade e boas práticas. 💪
 
-Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.parasoft.com/parabank/index.htm), criado para fins educacionais e testes automatizados. O sistema oferece funcionalidades como login, transferências, extrato, etc.
+Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.parasoft.com/parabank/index.html), criado para fins educacionais e testes automatizados. O sistema oferece funcionalidades como login, transferências, extrato, etc.
 
 --- 
 

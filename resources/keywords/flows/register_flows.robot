@@ -32,3 +32,18 @@ E clicar no botão "Registrar"
     Wait Until Element Is Visible    ${register.button_submit_register}
     Click Element    ${register.button_submit_register}
     Capture Page Screenshot
+
+
+# ============================================================================================================== #
+#                                     Fluxos de Edição de registro de Usuário                                    #
+# ============================================================================================================== #
+
+Quando preencher o formulário de edição de registro com dados atualizados do usuário
+    [Documentation]    Preencher o formulário de edição de registro com dados atualizados do usuário
+    Preencher o formulário de edição de registro com dados atualizados do usuário
+
+E clicar no botão "Update Profile"
+    [Documentation]    Clicar no botão "Update Profile"
+    Wait Until Element Is Visible    ${register.button_update_profile}
+    Click Element    ${register.button_update_profile}
+    Capture Page Screenshot

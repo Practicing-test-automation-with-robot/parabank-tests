@@ -52,3 +52,29 @@ Preencher o formulário de registro com dados já cadastrados (user_name do usu�
     ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}=    Dados fake de Registro de usuário
     Preencher o formulário de registro    ${first_name_default}    ${last_name_default}    ${address_user}    ${city_user}    ${state_user}    
     ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${user_name_default}    ${password_default}    ${password_default}
+
+
+# ============================================================================================================== #
+#                    Interação com elementos visuais de Edição de registro de Usuário                            #
+# ============================================================================================================== # 
+
+Dado que o usuário clicou no link de "Update Contact Info" do painel lateral à esquerda
+    [Documentation]    Clicar no link de "Update Contact Info"
+    Wait Until Element Is Visible    ${register.update_contact_form}
+    Click Element    ${register.update_contact_form}
+    O formulário de edição de registro é apresentado
+
+O formulário de edição de registro é apresentado
+    [Documentation]    Verifica se o formulário de edição de registro está visível
+    Wait Until Element Is Visible    ${Update_user_data}
+    Capture Page Screenshot
+
+Preencher o formulário de edição de registro com dados atualizados do usuário
+    [Documentation]    Preencher o formulário de edição de registro com dados atualizados do usuário
+    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}=   Dados fake de Registro de usuário
+    Input Text    ${input_address}    ${address_user}
+    Input Text    ${input_city}    ${city_user}
+    Input Text    ${input_state}    ${state_user}
+    Input Text    ${input_zip}    ${zip_user}
+    Input Text    ${input_phone}    ${phone_user}
+    Capture Page Screenshot

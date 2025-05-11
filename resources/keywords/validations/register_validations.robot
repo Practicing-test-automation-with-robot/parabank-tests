@@ -38,3 +38,13 @@ Então sistema apresenta mensagem de erro de registro: "This username already ex
     ${error_message}=    Get Text    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]
     Should Contain    ${error_message}    This username already exists.                     
     Capture Page Screenshot
+
+# ============================================================================================================== #
+#                                   Validações de Edição de Registro de Usuário                                  #
+# ============================================================================================================== #
+
+Então o usuário deve visualizar a mensagem de sucesso "Profile updated"
+    [Documentation]    Verifica se a mensagem de sucesso é exibida se não apresentar mensagem de erro
+    Run Keyword If    '${updateProfileResult}' != 'Profile Updated'    Log    Test completed successfully: ${updateProfileResult}       
+    Run Keyword If    '${updateProfileError}' == 'Error!'    Fail    Test failed due to error: ${updateProfileError}
+

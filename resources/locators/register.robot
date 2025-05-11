@@ -26,9 +26,16 @@ ${input_confirm_password}    id:repeatedPassword
 # register form error messages
 @{register_form_errors}    First name is required.    Last name is required.    Address is required.    City is required.    State is required.    Zip Code is required.    Phone number is required.    SSN is required.    Username is required.    Password is required.
 
+# Update user data
+${update_user_data}    id:updateProfileForm
+${updateProfileResult}    id:updateProfileResult
+${updateProfileError}    id:updateProfileError
+
 # =================================================================================== #
 #                             Biblioteca de elementos                                 #  
 # =================================================================================== #
 &{register}
 ...    link_register=//a[text()='Register']
 ...    button_submit_register=//input[@value='Register' and @class='button']
+...    update_contact_form=//a[text()='Update Contact Info']
+...    button_update_profile=//input[@value='Update Profile' and @class='button']
