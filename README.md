@@ -15,8 +15,6 @@ Abaixo segue o link do site utilizado para elaboração dos testes, sistema banc
 
 ```
 small-daily-challenges/
-
-```
 ├── .venv                     # Ambiente virtual Python para isolar dependências do projeto.
 ├── config                    # Arquivos de configuração do projeto.
 ├── libraries                 # Bibliotecas customizadas criadas para uso nos testes.
@@ -37,7 +35,6 @@ small-daily-challenges/
 ├── Jenkinsfile               # Pipeline de CI/CD para integração contínua no Jenkins.
 ├── pytest.ini                # Configurações específicas para o pytest.
 ├── README.md                 # Documentação principal do projeto.
-```
 ```
 ---
 
