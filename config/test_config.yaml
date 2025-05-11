@@ -1,0 +1,22 @@
+# Arquivo de configuração dos testes
+test_config:
+  # Configurações gerais do ambiente de teste
+  environment:
+    base_url: &base_url "https://parabank.parasoft.com/parabank/index.htm"       # URL base para acessar o sistema em teste
+    api_url: "https://api.example.com"    # URL para a API do sistema
+    timeout: 30                           # Tempo de espera máximo (em segundos) para cada teste
+
+  # Configuração de logs para acompanhamento dos testes
+  logging:
+    level: "INFO"                         # Nível de log (ex: INFO, DEBUG, ERROR)
+    log_file: "test_logs.log"             # Arquivo onde os logs serão salvos
+
+  # Configuração de tentativas em caso de falha
+  retries:
+    count: 3                              # Número de tentativas para os testes que falharem
+
+  # Testes específicos a serem executados
+  # test_cases:
+  #   - login_test                         # Nome do teste de login
+  #   - user_registration                  # Nome do teste de cadastro de usuário
+  #   - password_reset                     # Nome do teste de recuperação de senha

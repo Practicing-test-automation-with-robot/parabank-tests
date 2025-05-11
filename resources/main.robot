@@ -1,8 +1,24 @@
 *** Settings ***
-Library    SeleniumLibrary
 
 # ====================================================================#
-#                            Resources                                #
+#                             Bibliotecas                             #
+# ====================================================================#
+
+Library    SeleniumLibrary
+Library    String
+Library    Collections
+Library    OperatingSystem
+Library    RequestsLibrary
+Library    BuiltIn 
+Library    DateTime
+Library    FakerLibrary    locale=pt_BR
+
+# utils
+Library    ../utils/YamlReader.py
+Library    ../utils/generate_uuid.py
+
+# ====================================================================#
+#                            resources/                               #
 # ====================================================================#
 
 # keywords

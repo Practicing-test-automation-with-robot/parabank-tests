@@ -1,0 +1,17 @@
+selenium
+pytest
+pytest-html
+webdriver-manager
+pytest-selenium
+pytest-xdist
+pytest-cov
+requests
+robotframework-faker==5.0.0
+robotframework-seleniumlibrary
+
+# Ative o ambiente virtual com o seguinte comando para Windows:
+# source .venv/Scripts/activate
+
+# Para rodar o projeto, instale as dependências com o seguinte comando:
+# pip install -r config/requirements.txt
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.0 on win32)" generated="2025-05-10T19:59:04.633507" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Register Valid" source="c:\small-daily-challenges\parabank-tests\tests\web\register\test_register_valid.robot">
+<kw name="Abrir Navegador Com Chrome Customizado" owner="login_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:07.103215" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com/'.</msg>
+<arg>https://www.google.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-10T19:59:07.099024" elapsed="2.831427"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-10T19:59:09.932742" elapsed="0.041228"/>
+</kw>
+<kw name="Read YAML File" owner="YamlReader">
+<msg time="2025-05-10T19:59:09.996818" level="INFO">${config} = {'test_config': {'environment': {'base_url': 'https://parabank.parasoft.com/parabank/index.htm', 'api_url': 'https://api.example.com', 'timeout': 30}, 'logging': {'level': 'INFO', 'log_file': 'test_lo...</msg>
+<var>${config}</var>
+<arg>${CONFIG_PATH}</arg>
+<status status="PASS" start="2025-05-10T19:59:09.975723" elapsed="0.022123"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-10T19:59:10.001496" level="INFO">${test_config} = {'environment': {'base_url': 'https://parabank.parasoft.com/parabank/index.htm', 'api_url': 'https://api.example.com', 'timeout': 30}, 'logging': {'level': 'INFO', 'log_file': 'test_logs.log'}, 'retri...</msg>
+<var>${test_config}</var>
+<arg>${config}</arg>
+<arg>test_config</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-10T19:59:09.999237" elapsed="0.004138"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-10T19:59:10.007612" level="INFO">${env} = {'base_url': 'https://parabank.parasoft.com/parabank/index.htm', 'api_url': 'https://api.example.com', 'timeout': 30}</msg>
+<var>${env}</var>
+<arg>${test_config}</arg>
+<arg>environment</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-10T19:59:10.005349" elapsed="0.003537"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-10T19:59:10.021585" level="INFO">${base_url} = https://parabank.parasoft.com/parabank/index.htm</msg>
+<var>${base_url}</var>
+<arg>${env}</arg>
+<arg>base_url</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-10T19:59:10.012451" elapsed="0.010004"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:10.026401" level="INFO">Opening url 'https://parabank.parasoft.com/parabank/index.htm'</msg>
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-10T19:59:10.023743" elapsed="2.919891"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:13.194800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-10T19:59:12.947146" elapsed="0.249090"/>
+</kw>
+<status status="PASS" start="2025-05-10T19:59:07.084050" elapsed="6.113623"/>
+</kw>
+<test id="s1-t1" name="Test case: Registrar usuário com dados válidos" line="8">
+<kw name="Dado que o usuário clicou no link de registro" owner="register_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${register.link_register}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-10T19:59:13.209725" elapsed="0.058938"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:13.275720" level="INFO">Clicking element '//a[text()='Register']'.</msg>
+<arg>${register.link_register}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:13.270841" elapsed="0.868825"/>
+</kw>
+<kw name="O formulário de registro é apresentado" owner="register_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${register_form}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.169089" elapsed="0.044087"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:14.407151" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.215076" elapsed="0.195503"/>
+</kw>
+<doc>Verifica se o formulário de registro está visível</doc>
+<status status="PASS" start="2025-05-10T19:59:14.144090" elapsed="0.268564"/>
+</kw>
+<doc>Clicar no link de registro</doc>
+<status status="PASS" start="2025-05-10T19:59:13.207085" elapsed="1.206985"/>
+</kw>
+<kw name="Quando preencher o formulário de registro com dados válidos" owner="register_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:14.431341" level="INFO">Typing text 'Fake First Name' into text field 'name:customer.firstName'.</msg>
+<arg>${input_first_name}</arg>
+<arg>${first_name_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.423880" elapsed="0.176835"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:14.604633" level="INFO">Typing text 'Fake Last Name' into text field 'name:customer.lastName'.</msg>
+<arg>${input_last_name}</arg>
+<arg>${last_name_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.602295" elapsed="0.127081"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:14.733878" level="INFO">Typing text 'Fake Address' into text field 'name:customer.address.street'.</msg>
+<arg>${input_address}</arg>
+<arg>${address_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.731405" elapsed="0.160365"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:14.947211" level="INFO">Typing text 'Fake City' into text field 'id:customer.address.city'.</msg>
+<arg>${input_city}</arg>
+<arg>${city_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:14.920977" elapsed="0.315662"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:15.244089" level="INFO">Typing text 'Fake State' into text field 'id:customer.address.state'.</msg>
+<arg>${input_state}</arg>
+<arg>${state_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:15.238477" elapsed="0.116452"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:15.361306" level="INFO">Typing text 'Fake Postal Code' into text field 'id:customer.address.zipCode'.</msg>
+<arg>${input_zip}</arg>
+<arg>${zip_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-10T19:59:15.356529" elapsed="0.150865"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-10T19:59:15.552587" level="INFO">
