@@ -1,11 +1,11 @@
 *** Variables ***
-${user_name}        
-${password}    
-${user_name_invalid}         
-${password_invalid}  
-  
-${user_first_name}    
-${user_last_name}    
-${user_postal_code}     
+${full_name_default}        Inserir nome completo aqui     # Nome completo do usuário
+${user_name_default}        Inserir user_name aqui         # Nome de usuário válido para login
+${password_default}         Inserir password aqui          # Senha válida para login
+${user_name_invalid_default}     user_name_invalid         # Nome de usuário inválido (para testes de erro)
+${password_invalid_default}     password_invalid           # Senha inválida (para testes de erro)
 
-# copie o arquivo e renomeie para "env.resource", posteriormente passe suas credenciais de login
+# copie o arquivo e renomeie para "env.resource", posteriormente passe suas credenciais de login nos 
+# lugares determinados para que o arquivo funcione corretamente.
+# O arquivo "env.resource" é um arquivo de configuração que contém variáveis e informações específicas
+#  do ambiente de teste.
