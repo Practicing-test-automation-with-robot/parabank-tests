@@ -14,8 +14,8 @@ Library    DateTime
 Library    FakerLibrary    locale=pt_BR
 
 # utils
-Library    ../utils/YamlReader.py
-Library    ../utils/generate_uuid.py
+Library    ../libraries/utils/YamlReader.py
+Library    ../libraries/utils/generate_uuid.py
 
 # ====================================================================#
 #                            resources/                               #
