@@ -15,63 +15,43 @@ Abaixo segue o link do site utilizado para elaboração dos testes, sistema banc
 
 ```
 small-daily-challenges/
-├── resouces/     
-   ├── auth/                  # Contém dados de login no arquivo env.resource
-   ├── keywords/              # Contém as Keywords
-   ├── variebles/             # Contém as variáveis utilizadas nas keywords
-   ├── main.robot             # Contém todas as bibliotecas e caminhos de pastas e arquivos utilizados    
+
+```
+├── .venv                     # Ambiente virtual Python para isolar dependências do projeto.
+├── config                    # Arquivos de configuração do projeto.
+├── libraries                 # Bibliotecas customizadas criadas para uso nos testes.
+├── resources/     
+   ├── auth/                  # Contém dados de login no arquivo env.resource.
+   ├── keywords/              # Contém as Keywords reutilizáveis organizadas por funcionalidade.
+   ├── variables/             # Contém as variáveis utilizadas nas Keywords e testes.
+   ├── main.robot             # Arquivo principal que importa bibliotecas, pastas e arquivos necessários.
+├── results                   # Diretório onde são armazenados os relatórios e logs das execuções.
 ├── tests/
-   ├── api/                   # Contém as suites de testes para api
-   ├── mobile/                # Contém as suites de testes para mobile
-   ├── web/                   # Contém as suites de testes para web      
-├── .git/                     # Dados de versionamento
-├── README.md                 # Este arquivo incrível que você está lendo
-├── .gitignore                # Ignora arquivos temporários, swp, etc.
-├── struture.robot            # Script com estrutura de exemplo dos testes para iniciantes
+   ├── api/                   # Suites de testes para APIs.
+   ├── mobile/                # Suites de testes para aplicações mobile.
+   ├── web/                   # Suites de testes para aplicações web.
+   ├── structure_example.md   # Exemplo de estrutura de testes para iniciantes.
+├── .gitignore                # Arquivo para ignorar arquivos e pastas desnecessários no controle de versão.
+├── conftest.py               # Arquivo de configuração para o pytest.
+├── Dockerfile                # Configuração para criar uma imagem Docker do projeto.
+├── Jenkinsfile               # Pipeline de CI/CD para integração contínua no Jenkins.
+├── pytest.ini                # Configurações específicas para o pytest.
+├── README.md                 # Documentação principal do projeto.
 ```
-
+```
 ---
 
-## 🚀 Requisitos
+### Links para Bibliotecas Utilizadas no `resources/main.robot`
 
-Antes de tudo, tenha o seguinte instalado na sua máquina:
-
-- [Python 3.8+](https://www.python.org/)
-- [pip](https://pip.pypa.io/en/stable/)
-- [Robot Framework](https://robotframework.org/)
-
-Instale o Robot Framework com pip:
-
-```bash
-pip install robotframework
-```
-
-Para rodar testes com navegador, adicione:
-
-```bash
-pip install robotframework-seleniumlibrary
-```
-
----
-
-## ▶️ Como Rodar os Testes
-
-1. Acesse a pasta do projeto:
-
-```bash
-cd small-daily-challenges
-```
-
-2. Execute o comando:
-
-```bash
-robot struture.robot
-```
-
-3. Confira os relatórios gerados na pasta padrão `output`:
-   - `report.html`: relatório completo
-   - `log.html`: log detalhado
-   - `output.xml`: útil para CI/CD
+- [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
+- [Collections Library](https://robotframework.org/robotframework/latest/libraries/Collections.html)
+- [DateTime Library](https://robotframework.org/robotframework/latest/libraries/DateTime.html)
+- [OperatingSystem Library](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html)
+- [String Library](https://robotframework.org/robotframework/latest/libraries/String.html)
+- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
+- [FakerLibrary](https://github.com/guykisel/robotframework-faker)
+- [Biblioteca Faker Python](https://faker.readthedocs.io/en/master/#basic-usage)
+- [Providers/nomes para gerar dados fake]( https://faker.readthedocs.io/en/master/providers.html)
 
 ---
 
@@ -144,16 +124,3 @@ Este repositório nasceu da vontade de praticar com consistência e evoluir como
 
 ```Observação```: Há uma Wiki no repositório, onde anexarei meus aprendizados com a ferramenta.
 
---- 
-
-### Links para Bibliotecas Utilizadas no `resources/main.robot`
-
-- [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
-- [Collections Library](https://robotframework.org/robotframework/latest/libraries/Collections.html)
-- [DateTime Library](https://robotframework.org/robotframework/latest/libraries/DateTime.html)
-- [OperatingSystem Library](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html)
-- [String Library](https://robotframework.org/robotframework/latest/libraries/String.html)
-- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
-- [FakerLibrary](https://github.com/guykisel/robotframework-faker)
-- [Biblioteca Faker Python](https://faker.readthedocs.io/en/master/#basic-usage)
-- [Providers/nomes para gerar dados fake]( https://faker.readthedocs.io/en/master/providers.html)
