@@ -156,3 +156,4 @@ Este repositório nasceu da vontade de praticar com consistência e evoluir como
 - [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
 - [FakerLibrary](https://github.com/guykisel/robotframework-faker)
 - [Biblioteca Faker Python](https://faker.readthedocs.io/en/master/#basic-usage)
+- [Providers/nomes para gerar dados fake]( https://faker.readthedocs.io/en/master/providers.html)
