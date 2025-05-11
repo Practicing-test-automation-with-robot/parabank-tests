@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../main.robot
-Library    ../../.venv/Lib/site-packages/robot/libraries/Screenshot.py
 
 *** Keywords ***
 # ============================================================================================================== #
@@ -20,8 +19,7 @@ O formulário de registro é apresentado
 
 Quando preencher o formulário de registro com dados válidos
     [Documentation]    Testa o registro do usuário preenchendo os dados no formulário
-    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}=    Gerando os dados fake diretamente do Robot Framework
-    Preencher o formulário de registro com dados válidos    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
+    Preencher o formulário de registro com dados válidos
 
 E clicar no botão "Registrar"
     [Documentation]    Clicar no botão "Registrar"
@@ -46,7 +44,8 @@ Quando o usuário clicar no botão "Registrar" sem preencher os campos obrigató
     E clicar no botão "Registrar"
 
 Então serão apresentadas mensagens de erros para os campos obrigatórios
-    [Documentation]    Verifica se as mensagens de erro são exibidas nos campos obrigatórios
+    [Documentation]    Verifica se as mensagens de erro são exibidas nos campos obrigatórios do forms
+    ...    que está organizado em uma tabela
     @{linhas}=    Get WebElements    xpath=//table[@class='form2']//tr[td[2]/input]
     FOR    ${linha}    IN    @{linhas}
         ${tds}=    Get WebElements    xpath=.//td
@@ -57,29 +56,27 @@ Então serão apresentadas mensagens de erros para os campos obrigatórios
     END
     Capture Page Screenshot
 
+
+Quando preencher o formulário de registro com dados já cadastrados (usuário default)
+    [Documentation]    Preencher o formulário de registro com dados já cadastrados (usuário default)
+    Preencher o formulário de registro com dados já cadastrados (user_name do usuário default)
+
+Então sistema apresenta mensagem de erro de registro: "This username already exists."
+    [Documentation]    Verifica se a mensagem de erro é exibida
+    Wait Until Element Is Visible    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]    timeout=10s
+    ${error_message}=    Get Text    //span[@id='customer.username.errors' and contains(text(),'This username already exists.')]
+    Should Contain    ${error_message}    This username already exists.                     
+    Capture Page Screenshot
+
+
 # ============================================================================================================== #
-#                                                Dados Fake de registro                                          #
+#                                                Preenchimento do Forms                                          #
 # ============================================================================================================== #
 
-Gerando os dados fake diretamente do Robot Framework
-    ${first_name_user}    FakerLibrary.first_name
-    ${last_name_user}     FakerLibrary.last_name
-    ${address_user}       FakerLibrary.address
-    ${city_user}          FakerLibrary.city
-    ${state_user}         FakerLibrary.state
-    ${zip_user}           FakerLibrary.postcode  
-    ${phone_user}         FakerLibrary.phone_number
-    ${ssn_user}           FakerLibrary.ssn
-    ${username_user}      FakerLibrary.user_name
-    ${password_user}      FakerLibrary.password
-    RETURN     ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    
-    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
-
-
-Preencher o formulário de registro com dados válidos
-    [Documentation]    Preencher o formulário de registro com dados válidos
+Preencher o formulário de registro
+    [Documentation]    Preencher o formulário de registro com os dados fornecidos
     [Arguments]    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    
-    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
+    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}    ${confirm_password}=None
     Input Text    ${input_first_name}    ${first_name_user}
     Input Text    ${input_last_name}    ${last_name_user}
     Input Text    ${input_address}    ${address_user}
@@ -90,5 +87,18 @@ Preencher o formulário de registro com dados válidos
     Input Text    ${input_ssn}    ${ssn_user}
     Input Text    ${input_username}    ${username_user}
     Input Text    ${input_password_register}    ${password_user}
-    Input Text    ${input_confirm_password}    ${password_user}
+    ${confirm_password}=    Run Keyword If    '${confirm_password}' == 'None'    Set Variable    ${password_user}    ELSE    ${confirm_password}
+    Input Text    ${input_confirm_password}    ${confirm_password}
     Capture Page Screenshot
+
+Preencher o formulário de registro com dados válidos
+    [Documentation]    Preencher o formulário de registro com dados válidos
+    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}=    Dados fake de Registro de usuário
+    Preencher o formulário de registro    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    
+    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
+
+Preencher o formulário de registro com dados já cadastrados (user_name do usuário default)
+    [Documentation]    Preencher o formulário de registro com dados já cadastrados (usuário default)
+    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}=    Dados fake de Registro de usuário
+    Preencher o formulário de registro    ${first_name_default}    ${last_name_default}    ${address_user}    ${city_user}    ${state_user}    
+    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${user_name_default}    ${password_default}    ${password_default}

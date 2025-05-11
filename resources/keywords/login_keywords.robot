@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../main.robot
-Library    ../utils/YamlReader.py
 
 *** Keywords ***
 
