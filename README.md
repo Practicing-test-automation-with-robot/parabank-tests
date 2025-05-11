@@ -143,3 +143,16 @@ Quer contribuir? Show!
 Este repositório nasceu da vontade de praticar com consistência e evoluir como QA Automation Engineer. Bora crescer juntos nessa jornada 🚀🔥
 
 ```Observação```: Há uma Wiki no repositório, onde anexarei meus aprendizados com a ferramenta.
+
+--- 
+
+### Links para Bibliotecas Utilizadas no `resources/main.robot`
+
+- [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
+- [Collections Library](https://robotframework.org/robotframework/latest/libraries/Collections.html)
+- [DateTime Library](https://robotframework.org/robotframework/latest/libraries/DateTime.html)
+- [OperatingSystem Library](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html)
+- [String Library](https://robotframework.org/robotframework/latest/libraries/String.html)
+- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
+- [FakerLibrary](https://github.com/guykisel/robotframework-faker)
+- [Biblioteca Faker Python](https://faker.readthedocs.io/en/master/#basic-usage)
