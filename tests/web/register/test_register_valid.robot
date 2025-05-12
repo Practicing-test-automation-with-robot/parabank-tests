@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../../../resources/main.robot
 Suite Setup    Abrir Navegador Com Chrome Customizado
-# Test Teardown    Efetuar Logout no sistema
+Test Teardown    Efetuar Logout
 Suite Teardown    Fechar navegador
 
 *** Test Cases ***
