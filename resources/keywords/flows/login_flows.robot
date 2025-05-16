@@ -15,7 +15,7 @@ Efetuar Login em uma página web usando credenciais básicas válidas
     Dado que o usuário abriu o site na tela de login
     Quando inserir as credenciais básicas de login (email e senha) válidas
     Então clicar no botão "Entrar"
-    Validar tela inicial de login
+    Validar tela inicial de login    $username_user    $first_name_user    $last_name_user
 
 Efetuar Login em uma página web usando credenciais básicas inválidas
     Dado que o usuário abriu o site na tela de login

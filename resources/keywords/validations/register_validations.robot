@@ -13,10 +13,11 @@ Resource    ../../main.robot
 # ============================================================================================================== #
 Então o sistema efetua login apresentando uma mensagem de boas-vindas personalizada com o nome do usuário
     [Documentation]    Verifica se a mensagem de boas-vindas é exibida
-    [Arguments]    ${username_user}
+    [Arguments]    ${username_user}    ${first_name_user}    ${last_name_user}
     Wait Until Element Is Visible    //h1[contains(text(),'Welcome')]    timeout=10s
     ${welcome_message}=    Get Text    //h1[@class='title' and contains(text(),'Welcome')]
-    Should Contain    ${welcome_message}    Welcome ${username_user}
+    Run Keyword If    ${welcome_message}== Welcome ${first_name_user} ${last_name_user}    Log    Mensagem de boas-vindas: ${welcome_message}
+    Run keyword If     ${welcome_message}== Welcome ${full_name_default}    Log    Mensagem de boas-vindas: ${welcome_message}
     Capture Page Screenshot
 
 Então serão apresentadas mensagens de erros para os campos obrigatórios

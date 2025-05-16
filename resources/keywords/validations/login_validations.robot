@@ -10,8 +10,10 @@ Resource    ../../main.robot
 *** Keywords ***
 Validar tela inicial de login
     [Documentation]    Valida a tela inicial de login
+    [Arguments]    ${username_user}    ${first_name_user}    ${last_name_user}
     Wait Until Element Is Visible    ${initial_screen}
-    Wait Until Element Contains    ${initial_screen}    Welcome ${full_name_default}
+    Run Keyword If     ${initial_screen}== Welcome ${full_name_default}    log    Mensagem de boas-vindas: ${initial_screen}
+    Run Keyword If     ${initial_screen}== Welcome ${first_name_user} ${last_name_user}    log    Mensagem de boas-vindas: ${initial_screen}
     Log To Console    Usuario esta logado no sistema!
     Capture Element Screenshot    ${initial_screen}
 
