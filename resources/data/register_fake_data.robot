@@ -16,5 +16,4 @@ Dados fake de Registro de usuário
     ${ssn_user}           FakerLibrary.ssn
     ${username_user}      FakerLibrary.user_name
     ${password_user}      FakerLibrary.password
-    RETURN     ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    
-    ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
+    RETURN    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}

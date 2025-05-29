@@ -27,18 +27,18 @@ Resource    auth/env.resource
 # keywords
 # ====================================================================#
 # validations
-Resource    keywords/validations/register_validations.robot
-Resource    keywords/validations/login_validations.robot
+Resource    keywords/validations/kw_login_validations.resource
+Resource    keywords/validations/kw_register_validations.resource
 # flows
-Resource    keywords/flows/register_flows.robot
-Resource    keywords/flows/login_flows.robot
+Resource    keywords/flows/kw_register_flows.resource
+Resource    keywords/flows/kw_login_flows.resource
 # 
-Resource    keywords/pages/login_page.robot
-Resource    keywords/pages/register_page.robot
+Resource    keywords/pages/kw_login_page.resource
+Resource    keywords/pages/kw_register_page.resource
 
 # locators
-Resource    locators/register.robot
-Resource    locators/login.robot
+Resource    locators/locators_register.resource
+Resource    locators/locators_login.resource
 
 # data
 Resource    data/register_fake_data.robot

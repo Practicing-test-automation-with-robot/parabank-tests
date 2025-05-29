@@ -3,6 +3,22 @@ Resource    ../main.robot
 
 *** Variables ***
 # =================================================================================== #
+#                     Inicializando variáveis de Registro de usuário                  #
+# =================================================================================== #
+${address_user}    FakerLibrary.street_address     
+${first_name_user}    FakerLibrary.first_name
+${last_name_user}     FakerLibrary.last_name     
+${address_user}       FakerLibrary.address       
+${city_user}          FakerLibrary.city         
+${state_user}         FakerLibrary.state         
+${zip_user}           FakerLibrary.postcode           
+${phone_user}         FakerLibrary.phone_number         
+${ssn_user}           FakerLibrary.ssn           
+${username_user}      FakerLibrary.user_name      
+${password_user}      FakerLibrary.password    
+
+
+# =================================================================================== #
 #                                 Configurações                                       #
 # =================================================================================== #
 

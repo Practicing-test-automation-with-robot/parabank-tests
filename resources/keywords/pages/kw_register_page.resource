@@ -47,8 +47,10 @@ Preencher o formulário de registro com dados válidos
     Preencher o formulário de registro    ${first_name_user}    ${last_name_user}    ${address_user}    ${city_user}    ${state_user}    
     ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${username_user}    ${password_user}
 
+
 Preencher o formulário de registro com dados já cadastrados (user_name do usuário default)
     [Documentation]    Preencher o formulário de registro com dados já cadastrados (usuário default)
+    [Arguments]    ${first_name_default}    ${last_name_default}
     ${address_user}    ${city_user}    ${state_user}    ${zip_user}    ${phone_user}    ${ssn_user}=    Dados fake de Registro de usuário
     Preencher o formulário de registro    ${first_name_default}    ${last_name_default}    ${address_user}    ${city_user}    ${state_user}    
     ...    ${zip_user}    ${phone_user}    ${ssn_user}    ${user_name_default}    ${password_default}    ${password_default}

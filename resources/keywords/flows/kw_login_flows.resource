@@ -11,7 +11,7 @@ Resource    ../../main.robot
 # ============================================================================================================== #
 #                                             Fluxos de Registro de Usuário                                      #
 # ============================================================================================================== # 
-Efetuar Login em uma página web usando credenciais básicas válidas
+Efetuar Login em uma página web usando credenciais básicas válidas default
     Dado que o usuário abriu o site na tela de login
     Quando inserir as credenciais básicas de login (email e senha) válidas
     Então clicar no botão "Entrar"

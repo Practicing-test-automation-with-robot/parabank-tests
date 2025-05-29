@@ -24,7 +24,7 @@ Quando o usuário clicar no botão "Registrar" sem preencher os campos obrigató
 
 Quando preencher o formulário de registro com dados já cadastrados (usuário default)
     [Documentation]    Preencher o formulário de registro com dados já cadastrados (usuário default)
-    Preencher o formulário de registro com dados já cadastrados (user_name do usuário default)
+    Preencher o formulário de registro com dados já cadastrados (user_name do usuário default)    $first_name_default    $last_name_default
 
 # Submit
 E clicar no botão "Registrar"

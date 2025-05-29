@@ -1,2 +1,13 @@
 # Arquivo de credenciais sensíveis
 resources/auth/env.resource
+
+# Arquivos de resultados e logs
+results/output/logs/log.html
+results/output/output.xml
+results/reports/
+*.log
+*.png
+*.xml
+
+.venv/
+__pycache__/

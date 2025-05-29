@@ -12,12 +12,15 @@ Resource    ../../main.robot
 #                                   Validações de Registro de Usuário (Register)                                 #
 # ============================================================================================================== #
 Então o sistema efetua login apresentando uma mensagem de boas-vindas personalizada com o nome do usuário
-    [Documentation]    Verifica se a mensagem de boas-vindas é exibida
-    [Arguments]    ${username_user}    ${first_name_user}    ${last_name_user}
-    Wait Until Element Is Visible    //h1[contains(text(),'Welcome')]    timeout=10s
-    ${welcome_message}=    Get Text    //h1[@class='title' and contains(text(),'Welcome')]
-    Run Keyword If    ${welcome_message}== Welcome ${first_name_user} ${last_name_user}    Log    Mensagem de boas-vindas: ${welcome_message}
-    Run keyword If     ${welcome_message}== Welcome ${full_name_default}    Log    Mensagem de boas-vindas: ${welcome_message}
+    [Documentation]    Verifica se a mensagem de boas-vindas e a mensagem de conta criada são exibidas corretamente
+    [Arguments]    ${username_user}
+
+    ${welcome_message}    Get Text    //h1[@class='title']
+    Should Be Equal    ${welcome_message}    Welcome ${username_user}
+    
+    Set Suite Variable    ${account_created_message}=    Get Text    //p[contains(text(),'Your account was created successfully. You are now logged in.')]
+    ${account_created_message}=    Get Text    //p[contains(text(),'Your account was created successfully. You are now logged in.')]
+    Should Be Equal    ${account_created_message}    Your account was created successfully. You are now logged in.
     Capture Page Screenshot
 
 Então serão apresentadas mensagens de erros para os campos obrigatórios
