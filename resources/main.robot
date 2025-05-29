@@ -25,12 +25,20 @@ Library    ../libraries/utils/generate_uuid.py
 Resource    auth/env.resource
 
 # keywords
-Resource    keywords/register_keywords.robot
-Resource    keywords/login_keywords.robot
+# ====================================================================#
+# validations
+Resource    keywords/validations/kw_login_validations.resource
+Resource    keywords/validations/kw_register_validations.resource
+# flows
+Resource    keywords/flows/kw_register_flows.resource
+Resource    keywords/flows/kw_login_flows.resource
+# 
+Resource    keywords/pages/kw_login_page.resource
+Resource    keywords/pages/kw_register_page.resource
 
 # locators
-Resource    locators/register.robot
-Resource    locators/login.robot
+Resource    locators/locators_register.resource
+Resource    locators/locators_login.resource
 
 # data
 Resource    data/register_fake_data.robot

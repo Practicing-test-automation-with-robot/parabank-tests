@@ -6,7 +6,7 @@ Suite Teardown    Fechar navegador
 
 Test case: Login e Logout com dados válidos
     [Tags]    login    valid
-    Efetuar Login em uma página web usando credenciais básicas válidas
+    Efetuar Login em uma página web usando credenciais básicas válidas default
     Efetuar Logout
 
     

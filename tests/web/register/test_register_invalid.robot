@@ -14,6 +14,6 @@ Test case: Registrar usuário sem preencher os campos obrigatórios
 Test case: Registrar usuário com credenciais já cadastradas no sistema
     [Tags]    register    invalid
     Dado que o usuário clicou no link de registro
-    Quando preencher o formulário de registro com dados já cadastrados (usuário default)    $first_name_user    $last_name_user    $address_user    $city_user    $state_user    $zip_user    $phone_user    $ssn_user    $username_user    $password_user
+    Quando preencher o formulário de registro com dados já cadastrados (usuário default)
     E clicar no botão "Registrar"
     Então sistema apresenta mensagem de erro de registro: "This username already exists."

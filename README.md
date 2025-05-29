@@ -3,37 +3,36 @@
 Bem-vindo(a) ao repositório de desafios diários de automação com Robot Framework!
 Este projeto foi criado para praticar, aprender e dominar a criação de testes automatizados com foco em qualidade e boas práticas. 💪
 
-Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.parasoft.com/parabank/index.htm), criado para fins educacionais e testes automatizados. O sistema oferece funcionalidades como login, transferências, extrato, etc.
+Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.parasoft.com/parabank/index.html), criado para fins educacionais e testes automatizados. O sistema oferece funcionalidades como login, transferências, extrato, etc.
 
 --- 
 
 ##### 📁 Estrutura de Pastas
 ```bash
-small-daily-challenges/parabank-tests/
-├── .venv/                 # Ambiente virtual Python para isolar dependências
-├── config/                # Arquivos de configuração do projeto
-├── libraries/             # Bibliotecas customizadas para os testes
+small-daily-challenges/
+├── .venv/                       # Ambiente virtual Python para isolar dependências
+├── config/                      # Arquivos de configuração do projeto
+├── libraries/                   # Bibliotecas customizadas para os testes
 ├── resources/
-│   ├── auth/              # Dados de login e credenciais
-│   ├── data/              # Dados Fake - Fakelibrary 
-│   ├── keywords/          # Keywords reutilizáveis organizadas por funcionalidade
-│   ├── locators/          # Variáveis globais e de ambiente
-│   └── main.robot         # Arquivo principal com importações e setups
-├── results/               # Relatórios e logs de execução
-│   tests_data/            
+│   ├── auth/                    # Dados de login e credenciais
+│   ├── keywords/                # Keywords reutilizáveis organizadas por funcionalidade
+│      ├── pages/                # Elementos e interações específicas de páginas (ex: login_page.robot)
+│      ├── flows/                # Fluxos completos que combinam múltiplas páginas (ex: realizar_login.robot)
+│      └── validations/          # Keywords específicas de validação (ex: validar_mensagem_erro.robot)
+│   ├── locators/                # Variáveis globais e de ambiente
+│   └── main.robot               # Arquivo principal com importações e setups
+├── results/                     # Relatórios e logs de execução
 ├── tests/
-│   ├── api/                # Testes automatizados para APIs
-│   ├── mobile/             # Testes para aplicações mobile
-│   ├── web/                # Testes para aplicações web
-│     ├── login/
-│     ├── register/
-│   └── structure_example.md # Exemplo de estrutura para iniciantes
-├── .gitignore              # Exclusão de arquivos do versionamento
-├── conftest.py             # Configurações do Pytest
-├── Dockerfile              # Imagem Docker do projeto
-├── Jenkinsfile             # Pipeline de CI/CD para Jenkins
-├── pytest.ini              # Configurações do Pytest
-└── README.md               # Documentação principal
+│   ├── api/                     # Testes automatizados para APIs
+│   ├── mobile/                  # Testes para aplicações mobile
+│   ├── web/                     # Testes para aplicações web
+│   └── structure_example.md     # Exemplo de estrutura para iniciantes
+├── .gitignore                   # Exclusão de arquivos do versionamento
+├── conftest.py                  # Configurações do Pytest
+├── Dockerfile                   # Imagem Docker do projeto
+├── Jenkinsfile                  # Pipeline de CI/CD para Jenkins
+├── pytest.ini                   # Configurações do Pytest
+└── README.md                    # Documentação principal
 ```
 ---
 ##### 📚 Bibliotecas Utilizadas (resources/main.robot)
