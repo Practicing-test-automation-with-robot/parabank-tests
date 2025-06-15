@@ -5,6 +5,8 @@ Este projeto foi criado para praticar, aprender e dominar a criação de testes 
 
 Este projeto utiliza o sistema bancário demo [ParaBank](https://parabank.parasoft.com/parabank/index.html), criado para fins educacionais e testes automatizados. O sistema oferece funcionalidades como login, transferências, extrato, etc.
 
+A prática está sendo documentada na Wiki desse repositório e no projeto do Jira [Parabank Demo](https://cursojiracomxray2025.atlassian.net/jira/software/c/projects/PD/boards/5).
+
 --- 
 
 ##### 📁 Estrutura de Pastas
